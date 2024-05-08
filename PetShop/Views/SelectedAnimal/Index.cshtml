@@ -1,0 +1,107 @@
+﻿@model PetShop.Model.Animal
+
+
+    <html>
+        <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        </head>
+
+       <body>
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+                    <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z" />
+                </svg>
+                <span class=" ms-5 fs-4">Welcome to the pet Shop</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/Home" class="nav-link " aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="/Catalog" class="nav-link">Catalog</a></li>
+                <li class="nav-item"><a href="/Admin" class="nav-link">Admin</a></li>
+            </ul>
+        </header>
+    </div>
+
+            <h2 class="text-center mt-5">This is The @Model.Name</h2>
+          <div class="container d-flex justify-content-center">
+           
+              <div class="d-flex flex-column mt-5">
+
+            <div class=" d-flex flex-row">
+               <img src="~/images/@Model.PhotoName?@DateTime.Now.Ticks" alt="Animal Image" style="max-width: 300px; max-height: 400px;" />
+               <div class="ms-3" >
+               <h4 class="">Description:</h4>
+               <p>@Model.Description</p>
+               </div>
+
+              </div>
+
+               <h4 class="mt-5">Category: @Model.Category.Name</h4>
+               <h4 class="mt-5">Age: @Model.Age</h4>
+
+            <div class="d-flex  flex-row">
+
+                <div class="table-responsive mt-4 p-4" style="width:50%;">
+                   <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <div class="mb-2 d-flex  flex-row ">
+                                 <h2>Comments</h2>
+                                </div>
+
+                            </tr>
+                    </thead>
+
+                        <tbody>
+                            @foreach (var command in Model.Comments)
+                            {
+                                <tr>
+                                    <td>@command.CommentMessage </td>
+                                </tr>
+                            }
+                        </tbody>
+                   </table>
+                 </div>
+
+                <div class="mt-4 p-4" style="width:50%;">
+                    @using (Html.BeginForm("AddComment", "SelectedAnimal", FormMethod.Post))
+                    {
+
+                        <form action="AddComment"  method="post">
+                        <div class="form-group">
+                            <label for="commentText">Write Your Comment:</label>
+                            <input type="hidden" name="AnimalId" value="@Model.AnimalId" /> 
+                             <textarea class="form-control" id="CommentMessage" name="CommentMessage" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Comment</button>
+                    </form>
+                    }
+                  </div>
+               
+                
+            </div>
+            
+      </div>
+
+        <div class="d-flex align-items-end  justify-content-start mb-5 ms-3 " data-label="Back"></div>
+
+   
+   
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+       </body>
+
+
+
+
+
+
+
+
+
+
+    </html>

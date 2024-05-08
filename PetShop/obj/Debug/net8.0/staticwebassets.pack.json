@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Dorfr\\Desktop\\סלע\\asp project\\PetShop\\PetShop\\wwwroot\\Images\\3960d95a-ba5c-49b8-9519-d3b6fd335c64Screenshot 2023-12-21 094632.png",
+      "PackagePath": "staticwebassets\\Images\\3960d95a-ba5c-49b8-9519-d3b6fd335c64Screenshot 2023-12-21 094632.png"
+    },
+    {
+      "Id": "C:\\Users\\Dorfr\\Desktop\\סלע\\asp project\\PetShop\\PetShop\\wwwroot\\Images\\7e784cfe-bcad-4161-9743-1f765bc62914Screenshot 2023-12-21 094632.png",
+      "PackagePath": "staticwebassets\\Images\\7e784cfe-bcad-4161-9743-1f765bc62914Screenshot 2023-12-21 094632.png"
+    },
+    {
+      "Id": "C:\\Users\\Dorfr\\Desktop\\סלע\\asp project\\PetShop\\PetShop\\wwwroot\\Images\\Great-Ape-Gorilla.jpg",
+      "PackagePath": "staticwebassets\\Images\\Great-Ape-Gorilla.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dorfr\\Desktop\\סלע\\asp project\\PetShop\\PetShop\\wwwroot\\Images\\animals-lizard-redheadedrockagama.jpg",
+      "PackagePath": "staticwebassets\\Images\\animals-lizard-redheadedrockagama.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dorfr\\Desktop\\סלע\\asp project\\PetShop\\PetShop\\wwwroot\\Images\\dolphin.jpg",
+      "PackagePath": "staticwebassets\\Images\\dolphin.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dorfr\\Desktop\\סלע\\asp project\\PetShop\\PetShop\\wwwroot\\Images\\ef87d24c-494d-49b8-bfc0-b7d842afbd4cScreenshot 2023-12-21 094632.png",
+      "PackagePath": "staticwebassets\\Images\\ef87d24c-494d-49b8-bfc0-b7d842afbd4cScreenshot 2023-12-21 094632.png"
+    },
+    {
+      "Id": "C:\\Users\\Dorfr\\Desktop\\סלע\\asp project\\PetShop\\PetShop\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PetShop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PetShop.props",
+      "PackagePath": "build\\PetShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PetShop.props",
+      "PackagePath": "buildMultiTargeting\\PetShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PetShop.props",
+      "PackagePath": "buildTransitive\\PetShop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,115 @@
+﻿@model PetShop.Model.Animal
+@{
+    ViewBag.Title = "Categorys";
+}
+
+
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    body{
+       
+    }
+    .form{
+        display: block ;
+     
+    }
+    div{
+        display:flex;
+        justify-content:center;
+    }
+
+    .Lable{
+        margin-right: 20px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="50" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16">
+                    <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z" />
+                </svg>
+                <span class=" ms-5 fs-4">Welcome to the pet Shop</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/Home" class="nav-link " aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="/Catalog" class="nav-link">Catalog</a></li>
+                <li class="nav-item"><a href="/Admin" class="nav-link">Admin</a></li>
+            </ul>
+        </header>
+    </div>
+
+  
+    <div class="container">
+        <h1 class="mt-4 mb-5 d-flex justify-content-center">Edit @Model.Name</h1>
+        </div>
+
+    @using (Html.BeginForm("EditAnimal", "Edit", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+
+        <div class="container">
+            <div class="form">
+                @Html.HiddenFor(a => a.AnimalId) <!-- Add a hidden field for AnimalId -->
+
+                <div class="d-block">
+                    @Html.LabelFor(a => a.Name)
+                    @Html.TextBoxFor(a => a.Name)
+                    <br />
+
+                    @Html.LabelFor(a => a.Age)
+                    @Html.TextBoxFor(a => a.Age)
+                    <br />
+
+                    @Html.LabelFor(a => a.Description)
+                    @Html.TextBoxFor(a => a.Description)
+                    <br />
+
+                    @Html.LabelFor(a => a.CategoryId)
+                    <select id="CategoryId" name="CategoryId" class="me-4">
+                        @foreach (var category in ViewBag.Category)
+                        {
+                            <option value="@category.CategoryId">@category.Name</option>
+                        }
+                    </select>
+                    <label for="Photo" >Picture</label>
+                    <input name="Photo" type="file" accept="image/*"/>
+                </div>
+
+                <div class="d-block mt-5">
+                    <button id="submit" type="submit">Save Changes</button>
+                </div>
+            </div>
+        </div>
+            
+    
+
+  
+        
+       
+        
+    }
+    <div class="d-flex  mb-5 ms-3" data-label="Back">@Html.ActionLink("Back", "Index", "Admin")</div>
+
+
+
+
+
+ 
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>
+
